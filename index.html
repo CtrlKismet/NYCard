@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>New Year Card</title>
+    <link href="https://cdnjs.loli.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="matrix">
+        <div class="matrix_table">
+            <matrix-num v-for="num in nums" :block="num" :now_num="now_number" :now_r="now_row" :now_c="now_col"
+                :now_b="now_block" :key="num.id" @select-number="ChangeNum"></matrix-num>
+        </div>
+        <div></div>
+        <div class="matrix_tools">
+            <div class="tool_hint" @click="FillNumber(0,false)">
+                <div><i class="fa fa-lightbulb-o"></i></div>
+                <p>提示</p>
+            </div>
+            <div class="tool_erase" @click="FillNumber(0)">
+                <div><i class="fa fa-eraser"></i></div>
+                <p>擦除</p>
+            </div>
+            <div class="tool_number">
+                <div v-for="num in 9" @click="FillNumber(num)" :style="{opacity:show_fill_number(num)?1:0}">{{num}}</div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.loli.net/ajax/libs/vue/2.6.10/vue.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

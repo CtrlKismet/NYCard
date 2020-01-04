@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+/* highlighting:#F5E0C4 */
+/* samenumber:#C2C0BC */
+/* fillnumber:#395E99 */
+/* choosenumber:#D1E3FF */
+#matrix {
+    width: 500px;
+    height: 670px;
+    margin: 100px auto;
+    padding: 20px 10px;
+    display: grid;
+    grid-template-rows: 500px 30px 100px;
+    grid-template-areas: "m_table"".""m_tools";
+    background-color: #FFF7E6;
+}
+
+.matrix_table {
+    grid-area: m_table;
+    display: grid;
+    grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
+    grid-template-rows: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
+    border: 2px solid black;
+    align-items: center;
+    justify-items: center;
+    background-color: #FFF7E6;
+}
+
+.matrix_table .num {
+    font-size: 2rem;
+    height: 100%;
+    width: 100%;
+    color: #395E99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.matrix_table .rl_border {
+    border-right: 1px solid #cfcdc9;
+}
+
+.matrix_table .rh_border {
+    border-right: 2px solid black;
+}
+
+.matrix_table .bl_border {
+    border-bottom: 1px solid #cfcdc9;
+}
+
+.matrix_table .bh_border {
+    border-bottom: 2px solid black;
+}
+
+.matrix_table .blocked {
+    color: black !important;
+}
+
+.matrix_table .choosed {
+    background-color: #D1E3FF !important;
+}
+
+.matrix_table .error_number {
+    color: red !important;
+}
+
+.matrix_table .highlight_number {
+    background-color: #C2C0BC;
+}
+
+.matrix_table .highlight_area {
+    background-color: #FAECBC;
+}
+
+.matrix_tools {
+    grid-area: m_tools;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 10% 90%;
+    grid-template-areas: "t_hint t_number""t_erase t_number";
+}
+
+.fa {
+    font-size: 1.5rem;
+}
+
+.matrix_tools .tool_hint {
+    font-size: .9rem;
+    padding: 5px;
+    grid-area: t_hint;
+    text-align: center;
+    color: gray;
+}
+
+.matrix_tools .tool_erase {
+    font-size: .9rem;
+    padding: 5px;
+    grid-area: t_erase;
+    text-align: center;
+    color: gray;
+}
+
+.matrix_tools .tool_number {
+    grid-area: t_number;
+    display: grid;
+    grid-template-columns: 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11% 11.11%;
+}
+
+.matrix_tools .tool_number div {
+    font-size: 3rem;
+    color: #395E99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
